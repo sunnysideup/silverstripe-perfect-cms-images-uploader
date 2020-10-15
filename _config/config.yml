@@ -1,3 +1,0 @@
-SilverStripe\Core\Injector\Injector:
-  EmailAddress:
-    class: Sunnysideup\PerfectCmsImagesUploader\Model\Fieldtypes\EmailAddress

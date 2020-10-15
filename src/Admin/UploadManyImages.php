@@ -1,6 +1,6 @@
 <?php
 
-namespace Sunnysideup\PerfectCMSImagesUploader\Admin;
+namespace Sunnysideup\PerfectCMSImagesUploader\Admin\UploadManyImages;
 
 
 use SilverStripe\Admin\LeftAndMain;
@@ -12,7 +12,7 @@ use SilverStripe\ORM\FieldType\DBHTMLText;
 use Image;
 use Sunnysideup\PerfectCmsImages\Forms\PerfectCmsImagesUploadField;
 
-class ProductImageUpload extends LeftAndMain
+class UploadManyImages extends LeftAndMain
 {
     private static $menu_priority = 3.3;
     private static $url_segment = 'upload-images';
@@ -23,14 +23,17 @@ class ProductImageUpload extends LeftAndMain
     ];
 
     /**
-     * example values:
-     *         SiteTree::class => [
-     *             'ImageField' => [
-     *                 'URLSegment',
-     *                 'SomeOtherID'
-     *             ],
-     *         ]
-
+     * Example
+     * Sunnysideup\PerfectCMSImagesUploader\Admin\UploadManyImages:
+     *     class_fields_matchers:
+     *         Page:
+     *             MatchingCodeFields:
+     *                 - URLSegment
+     *                 - SomeOtherID
+     *             ImageRelationShips:
+     *                 MyImageField: PerfectCmsImageTemplate1
+     *                 MyManyManyRelationField: PerfectCmsImageTemplate1
+     *                 MyHasOneRelation: PerfectCmsImageTemplate2
      *
      * @var array
      */
@@ -43,13 +46,6 @@ class ProductImageUpload extends LeftAndMain
      */
     public function StepOneSelect()
     {
-        $listOfOptions = $this->Config()->get('class_fields_matchers');
-        $options = [];
-        foreach($listOfOptions as $className => $classNameDetails) {
-            foreach($classNameDetails as $relationship => $matchingFields) {
-                $options[$className.'_'.$relationship.'_'] = Injector::inst()->get($className)->singularName().'RelationShipNameHere';
-            }
-        }
         return Form::create(
             $this,
             "EditForm",
@@ -57,7 +53,7 @@ class ProductImageUpload extends LeftAndMain
                 DropdownField::create(
                     'ClassName',
                     'ObjectType',
-                    $options
+                    $this->getRelationshipList()
                 ),
             ])
         );
@@ -113,4 +109,19 @@ class ProductImageUpload extends LeftAndMain
             ])
         );
     }
+
+    protected function getRelationshipList() : array
+    {
+        $listOfOptions = $this->Config()->get('class_fields_matchers');
+        $options = [];
+        foreach($listOfOptions as $className => $classNameDetails) {
+            $singleton = Injector::inst()->get($className);
+            foreach($classNameDetails['ImageRelationShips'] as $relationship) {
+                $options[$className.'_'.$relationship.'_'] = $singleton->singularName(). ' - ' . $singleton->getFieldLabel($relationship);
+            }
+        }
+
+        return $options;
+    }
+
 }

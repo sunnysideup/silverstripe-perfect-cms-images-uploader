@@ -1,4 +1,4 @@
-# Silverstripe email address database field module
+# Silverstripe perfect cms images upload module
 [![Build Status](https://travis-ci.org/sunnysideup/silverstripe-perfect-cms-images-uploader.svg?branch=master)](https://travis-ci.org/sunnysideup/silverstripe-perfect-cms-images-uploader)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sunnysideup/silverstripe-perfect-cms-images-uploader/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sunnysideup/silverstripe-perfect-cms-images-uploader/?branch=master)
 [![codecov.io](https://codecov.io/github/sunnysideup/silverstripe-perfect-cms-images-uploader/coverage.svg?branch=master)](https://codecov.io/github/sunnysideup/silverstripe-perfect-cms-images-uploader?branch=master)
