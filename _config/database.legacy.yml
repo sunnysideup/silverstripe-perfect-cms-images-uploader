@@ -1,0 +1,3 @@
+SilverStripe\ORM\DatabaseAdmin:
+  classname_value_remapping:
+    Sunnysideup\PerfectCmsImagesUploader\Model\Fieldtypes\EmailAddress: Sunnysideup\PerfectCmsImagesUploader\Model\Fieldtypes\EmailAddress

@@ -1,0 +1,33 @@
+{
+    "name": "sunnysideup/perfect-cms-images-uploader",
+    "type": "silverstripe-vendormodule",
+    "description": "Silverstripe module to upload tons of images - real fast!",
+    "keywords": [
+        "Silverstripe-CMS",
+        "CMS",
+        "Silverstripe",
+        "email",
+        "e-mail",
+        "database",
+        "varchar",
+        "field",
+        "model"
+    ],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Nicolaas Francken",
+            "email": "modules@sunnysideup.co.nz",
+            "role": "lead developer"
+        }
+    ],
+    "require": {
+        "silverstripe/recipe-cms": "^4.4"
+    },
+    "extra": [],
+    "autoload": {
+        "psr-4": {
+            "Sunnysideup\\PerfectCmsImagesUploader\\": "src/"
+        }
+    }
+}
