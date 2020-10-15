@@ -1,4 +1,4 @@
-# Contributing to email address database field
+# Contributing to perfect cms images uploader module
 
 Please read the
 [generic write up for contributing](https://docs.silverstripe.org/en/4.0/contributing/)
