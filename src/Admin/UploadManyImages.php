@@ -23,18 +23,8 @@ class UploadManyImages extends LeftAndMain
     ];
 
     /**
-     * Example
-     * Sunnysideup\PerfectCMSImagesUploader\Admin\UploadManyImages:
-     *     class_fields_matchers:
-     *         Page:
-     *             MatchingCodeFields:
-     *                 - URLSegment
-     *                 - SomeOtherID
-     *             ImageRelationShips:
-     *                 MyImageField: PerfectCmsImageTemplate1
-     *                 MyManyManyRelationField: PerfectCmsImageTemplate1
-     *                 MyHasOneRelation: PerfectCmsImageTemplate2
-     *
+     * SEE: https://github.com/sunnysideup/silverstripe-perfect-cms-images-uploader/blob/master/docs/en/INDEX.md
+     * for an example ... 
      * @var array
      */
     private static $class_fields_matchers = [];
