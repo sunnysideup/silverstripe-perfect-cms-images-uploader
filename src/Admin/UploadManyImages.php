@@ -80,12 +80,13 @@ class UploadManyImages extends LeftAndMain
 
                         // preg the id from the title of the file
                         $id = preg_split('[/._]', $data->title, PREG_SPLIT_OFFSET_CAPTURE);
-
+                        $field = 'TBC';
+                        $field = 'TBC';
                         $object = $this->className::filter([$field => $id]);
                         // Find product from id
                         if ($object->count() === 1) {
                             // Attach image to found prodcut
-                            $matchingProduct->{$this->relationshipName}()->add(
+                            $object->{$this->relationshipName}()->add(
                                 Image::get_by_id($data->id)
                             );
                         }
