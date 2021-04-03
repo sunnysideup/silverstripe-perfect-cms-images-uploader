@@ -29,12 +29,14 @@ class UploadManyImages extends LeftAndMain
     /**
      * SEE: https://github.com/sunnysideup/silverstripe-perfect-cms-images-uploader/blob/master/docs/en/INDEX.md
      * for an example ...
+     *
      * @var array
      */
     private static $class_fields_matchers = [];
 
     /**
-     * set the class and relationship name
+     * set the class and relationship name.
+     *
      * @return Form
      */
     public function StepOneSelect()
@@ -84,7 +86,7 @@ class UploadManyImages extends LeftAndMain
                         $field = 'TBC';
                         $object = $this->className::filter([$field => $id]);
                         // Find product from id
-                        if ($object->count() === 1) {
+                        if (1 === $object->count()) {
                             // Attach image to found prodcut
                             $object->{$this->relationshipName}()->add(
                                 Image::get_by_id($data->id)
