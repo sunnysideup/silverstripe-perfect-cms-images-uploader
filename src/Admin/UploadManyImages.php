@@ -3,7 +3,6 @@
 namespace Sunnysideup\PerfectCMSImagesUploader\Admin\UploadManyImages;
 
 use Image;
-use SilverStripe\Admin\LeftAndMain;
 use SilverStripe\Control\HTTPResponse;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\FieldList;
