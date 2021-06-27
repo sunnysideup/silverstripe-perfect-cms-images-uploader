@@ -11,7 +11,7 @@ use SilverStripe\Forms\Form;
 use SilverStripe\ORM\FieldType\DBHTMLText;
 use Sunnysideup\PerfectCmsImages\Forms\PerfectCmsImagesUploadField;
 
-class UploadManyImages extends LeftAndMain
+class UploadManyImages
 {
     protected $className = '';
 
