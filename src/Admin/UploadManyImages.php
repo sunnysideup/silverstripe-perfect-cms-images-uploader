@@ -85,7 +85,7 @@ class UploadManyImages
                         $field = 'TBC';
                         $object = $this->className::filter([$field => $id]);
                         // Find product from id
-                        if (1 === $object->count()) {
+                        if ($object->count() === 1) {
                             // Attach image to found prodcut
                             $object->{$this->relationshipName}()->add(
                                 Image::get_by_id($data->id)
