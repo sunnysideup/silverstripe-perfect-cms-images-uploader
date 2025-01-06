@@ -11,7 +11,8 @@
         "upload",
         "upload field",
         "LeftAndMain",
-        "UploadField"
+        "UploadField",
+        "assets"
     ],
     "license": "BSD-3-Clause",
     "authors": [
